@@ -1,5 +1,7 @@
 package labi.test.leecode;
 
+import cn.hutool.core.lang.Console;
+
 /**
  * @program: JavaBasicTest
  * @description:
@@ -56,7 +58,20 @@ public class Test {
 //        String s = CustomNumUtil.addBinary(a, b);
 //        System.out.println("二进制求和======>" + s);
 
-        int i = CustomNumUtil.climbStairs(45);
-        System.out.println("爬楼梯======>" + i);
+//        int i = CustomNumUtil.climbStairs(45);
+//        System.out.println("爬楼梯======>" + i);
+
+//        LinkedList<String> linkedList = new LinkedList<>();
+//        linkedList.add("1");
+//        linkedList.add("1");
+////        linkedList.add("2");
+////        linkedList.add("3");
+//        LinkedList<String> linkedList1 = CustomNumUtil.deleteDuplicates(linkedList);
+//        System.out.println("删除排序链表中的重复元素======>"+linkedList1.toString());
+
+        int[] num1 = {1, 2, 3, 4, 5};
+        int[] num2 = {2, 6, 7};
+        int[] merge = CustomNumUtil.merge(num1, num1.length, num2, num2.length);
+        Console.log("合并两个有序数组======>" + merge);
     }
 }

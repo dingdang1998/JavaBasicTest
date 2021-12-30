@@ -1,9 +1,8 @@
 package labi.test.leecode;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Stack;
+import cn.hutool.core.collection.CollUtil;
+
+import java.util.*;
 
 /**
  * @program: JavaBasicTest
@@ -292,5 +291,67 @@ public class CustomNumUtil {
             r = p + q;
         }
         return r;
+    }
+
+    /**
+     * 删除排序链表中的重复元素
+     * leetcode83
+     *
+     * @param linkedList
+     * @return
+     */
+    public static LinkedList<String> deleteDuplicates(LinkedList<String> linkedList) {
+        if (CollUtil.isEmpty(linkedList)) {
+            return linkedList;
+        }
+
+        if (linkedList.size() == 1) {
+            return linkedList;
+        }
+
+        HashSet<String> set = new HashSet<>();
+        ListIterator<String> iterator = linkedList.listIterator();
+
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+
+            if (set.contains(next)) {
+                iterator.remove();
+            } else {
+                set.add(next);
+            }
+        }
+
+        return linkedList;
+    }
+
+    /**
+     * 合并两个有序数组
+     * leetcode88
+     *
+     * @param nums1
+     * @param m
+     * @param nums2
+     * @param n
+     */
+    public static int[] merge(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = 0, p2 = 0;
+        int[] sort = new int[m + n];
+
+        int cur = 0;
+        while (p1 < m || p2 < n) {
+            if (p1 == m) {
+                cur = nums2[p2++];
+            } else if (p2 == n) {
+                cur = nums1[p1++];
+            } else if (nums1[p1] < nums2[p2]) {
+                cur = nums1[p1++];
+            } else {
+                cur = nums2[p2++];
+            }
+            sort[p1 + p2 - 1] = cur;
+        }
+
+        return sort;
     }
 }
