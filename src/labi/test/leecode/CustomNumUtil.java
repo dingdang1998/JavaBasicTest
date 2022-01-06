@@ -354,4 +354,40 @@ public class CustomNumUtil {
 
         return sort;
     }
+
+    /**
+     * 买卖股票的最佳时机
+     * leetcode121
+     *
+     * @param prices
+     * @return
+     */
+    public static int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxPrice = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            } else if (prices[i] - minPrice > maxPrice) {
+                maxPrice = prices[i] - minPrice;
+            }
+        }
+        return maxPrice;
+    }
+
+    /**
+     * 只出现一次的数字
+     * 使用异或解决
+     * leetcode136
+     *
+     * @param nums
+     * @return
+     */
+    public static int singleNumber(int[] nums) {
+        int single = 0;
+        for (int i = 0; i < nums.length; i++) {
+            single ^= nums[i];
+        }
+        return single;
+    }
 }

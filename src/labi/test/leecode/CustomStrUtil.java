@@ -30,4 +30,24 @@ public class CustomStrUtil {
         s = s.trim();
         return s.length() - s.lastIndexOf(' ') - 1;
     }
+
+    /**
+     * 验证回文串
+     * leetcode125
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isPalindrome(String str) {
+        StringBuilder sGood = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (Character.isLetterOrDigit(c)) {
+                sGood.append(Character.toLowerCase(c));
+            }
+        }
+
+        StringBuilder reverse = new StringBuilder(sGood).reverse();
+        return sGood.toString().equals(reverse.toString());
+    }
 }
