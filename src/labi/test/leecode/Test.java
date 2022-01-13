@@ -69,9 +69,21 @@ public class Test {
 //        LinkedList<String> linkedList1 = CustomNumUtil.deleteDuplicates(linkedList);
 //        System.out.println("删除排序链表中的重复元素======>"+linkedList1.toString());
 
-        int[] num1 = {1, 2, 3, 4, 5};
-        int[] num2 = {2, 6, 7};
-        int[] merge = CustomNumUtil.merge(num1, num1.length, num2, num2.length);
-        Console.log("合并两个有序数组======>" + merge);
+//        int[] num1 = {1, 2, 3, 4, 5};
+//        int[] num2 = {2, 6, 7};
+//        int[] merge = CustomNumUtil.merge(num1, num1.length, num2, num2.length);
+//        Console.log("合并两个有序数组======>" + merge);
+
+        int[] nums = {7, 1, 5, 3, 6, 4};
+        int maxProfit = CustomNumUtil.maxProfit(nums);
+        Console.log("买卖股票的最佳时机======>" + maxProfit);
+
+        String s = "A man, a plan, a canal: Panama";
+        boolean palindrome = CustomStrUtil.isPalindrome(s);
+        Console.log("验证回文串======>" + palindrome);
+
+        int[] nums2 = {2, 2, 3};
+        int i = CustomNumUtil.singleNumber(nums2);
+        Console.log("只出现一次的数字======>" + i);
     }
 }
