@@ -8,6 +8,8 @@ package labi.test.thread;
  **/
 public class InstanceFactory {
 
+    private InstanceFactory(){}
+
     private static class InstanceHolder {
         public static Instance instance = new Instance();
     }

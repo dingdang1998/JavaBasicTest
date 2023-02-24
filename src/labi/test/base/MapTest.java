@@ -16,8 +16,14 @@ public class MapTest {
         Map<String, String> map = new HashMap<>();
         map.put(null, null);
         System.out.println(map.get(null));
+        System.out.println(map.isEmpty());
 
-        Set<String> set = new HashSet<>();
+        Set<String> set = null;
+//        System.out.println(set.isEmpty());
 
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("1","Y");
+        map1.put("2","N");
+        System.out.println(map1.get(null));
     }
 }
